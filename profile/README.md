@@ -39,7 +39,7 @@ That's YunoClaw.
 ## How YunoClaw Works
 
 <div align="center">
-<img src="diagrams/yunoclaw-flow.svg" alt="YunoClaw Flow" width="100%"/>
+<img src="https://raw.githubusercontent.com/yunoclaw/.github/main/diagrams/yunoclaw-flow.svg" alt="YunoClaw Flow" width="100%"/>
 </div>
 
 <br/>
@@ -53,7 +53,7 @@ You speak naturally. YunoClaw understands your constraints, searches multiple me
 ## The Architecture
 
 <div align="center">
-<img src="diagrams/yunoclaw-architecture.svg" alt="YunoClaw Architecture" width="100%"/>
+<img src="https://raw.githubusercontent.com/yunoclaw/.github/main/diagrams/yunoclaw-architecture.svg" alt="YunoClaw Architecture" width="100%"/>
 </div>
 
 <br/>
@@ -67,7 +67,7 @@ YunoClaw sits between you and merchants, acting as your intelligent agent. It ta
 ## The Core Loop
 
 <div align="center">
-<img src="diagrams/yunoclaw-core-loop.svg" alt="YunoClaw Core Loop" width="100%"/>
+<img src="https://raw.githubusercontent.com/yunoclaw/.github/main/diagrams/yunoclaw-core-loop.svg" alt="YunoClaw Core Loop" width="100%"/>
 </div>
 
 <br/>
@@ -81,7 +81,7 @@ The loop is simple: You set boundaries → Agent searches within them → Mercha
 ## Core Principles
 
 <div align="center">
-<img src="diagrams/yunoclaw-principles.svg" alt="YunoClaw Principles" width="100%"/>
+<img src="https://raw.githubusercontent.com/yunoclaw/.github/main/diagrams/yunoclaw-principles.svg" alt="YunoClaw Principles" width="100%"/>
 </div>
 
 ---
