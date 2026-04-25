@@ -1,134 +1,63 @@
-<svg width="1200" height="600" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+<svg width="980" height="340" viewBox="0 0 980 340" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap');
-      
-      @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+      .line-anim {
+        stroke-dasharray: 8 5;
+        animation: dash 2s linear infinite;
       }
-      
-      .fade-in { animation: fadeIn 1s ease-out forwards; }
-      .delay-1 { animation-delay: 0.2s; opacity: 0; }
-      .delay-2 { animation-delay: 0.4s; opacity: 0; }
-      .delay-3 { animation-delay: 0.6s; opacity: 0; }
-      .delay-4 { animation-delay: 0.8s; opacity: 0; }
-      .delay-5 { animation-delay: 1s; opacity: 0; }
+      @keyframes dash {
+        to { stroke-dashoffset: -26; }
+      }
     </style>
   </defs>
 
   <!-- Background -->
-  <rect width="1200" height="600" fill="#0A1628"/>
+  <rect width="1200" height="340" fill="#0A1628"/>
 
-  <!-- Title -->
-  <text x="600" y="50" font-family="Plus Jakarta Sans, sans-serif" font-size="32" font-weight="700" fill="#F6F1E8" text-anchor="middle">
-    Core Principles
-  </text>
+  <!-- Animated connectors between cards -->
+  <line x1="230" y1="170" x2="270" y2="170" stroke="#2D3F5C" stroke-width="2" class="line-anim"/>
+  <line x1="470" y1="170" x2="510" y2="170" stroke="#2D3F5C" stroke-width="2" class="line-anim"/>
+  <line x1="710" y1="170" x2="750" y2="170" stroke="#2D3F5C" stroke-width="2" class="line-anim"/>
 
-  <!-- Principle 1: Precision -->
-  <g class="fade-in delay-1">
-    <rect x="50" y="120" width="200" height="180" rx="20" fill="#1E2D45" stroke="#14B8A6" stroke-width="3"/>
-    <text x="150" y="165" font-size="48" text-anchor="middle">🎯</text>
-    <text x="150" y="205" font-family="Plus Jakarta Sans, sans-serif" font-size="20" font-weight="700" fill="#14B8A6" text-anchor="middle">
-      Precision
-    </text>
-    <text x="150" y="235" font-family="Inter, sans-serif" font-size="13" fill="#B8AFA0" text-anchor="middle">
-      Hard constraints,
-    </text>
-    <text x="150" y="255" font-family="Inter, sans-serif" font-size="13" fill="#B8AFA0" text-anchor="middle">
-      not soft preferences
-    </text>
-    <text x="150" y="285" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#F59E0B" text-anchor="middle">
-      "$120" means $120
-    </text>
-  </g>
+  <!-- Card 1: Precision -->
+  <rect x="30" y="60" width="200" height="220" rx="18" fill="#1E2D45" stroke="#14B8A6" stroke-width="3"/>
+  <rect x="30" y="60" width="200" height="6" rx="3" fill="#14B8A6"/>
+  <text x="130" y="110" font-family="sans-serif" font-size="20" font-weight="700" fill="#14B8A6" text-anchor="middle">Precision</text>
+  <text x="130" y="148" font-family="sans-serif" font-size="13" fill="#B8AFA0" text-anchor="middle">Hard constraints,</text>
+  <text x="130" y="168" font-family="sans-serif" font-size="13" fill="#B8AFA0" text-anchor="middle">not soft preferences.</text>
+  <text x="130" y="200" font-family="sans-serif" font-size="13" fill="#B8AFA0" text-anchor="middle">You say $120 —</text>
+  <text x="130" y="220" font-family="sans-serif" font-size="13" fill="#B8AFA0" text-anchor="middle">it will never show $121.</text>
+  <text x="130" y="258" font-family="sans-serif" font-size="12" font-weight="700" fill="#F59E0B" text-anchor="middle">Exact. Always.</text>
 
-  <!-- Principle 2: Trust -->
-  <g class="fade-in delay-2">
-    <rect x="290" y="120" width="200" height="180" rx="20" fill="#1E2D45" stroke="#059669" stroke-width="3"/>
-    <text x="390" y="165" font-size="48" text-anchor="middle">🛡️</text>
-    <text x="390" y="205" font-family="Plus Jakarta Sans, sans-serif" font-size="20" font-weight="700" fill="#059669" text-anchor="middle">
-      Trust
-    </text>
-    <text x="390" y="235" font-family="Inter, sans-serif" font-size="13" fill="#B8AFA0" text-anchor="middle">
-      Every recommendation
-    </text>
-    <text x="390" y="255" font-family="Inter, sans-serif" font-size="13" fill="#B8AFA0" text-anchor="middle">
-      is explained
-    </text>
-    <text x="390" y="285" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#F59E0B" text-anchor="middle">
-      You understand why
-    </text>
-  </g>
+  <!-- Card 2: Trust -->
+  <rect x="270" y="60" width="200" height="220" rx="18" fill="#1E2D45" stroke="#059669" stroke-width="3"/>
+  <rect x="270" y="60" width="200" height="6" rx="3" fill="#059669"/>
+  <text x="370" y="110" font-family="sans-serif" font-size="20" font-weight="700" fill="#059669" text-anchor="middle">Trust</text>
+  <text x="370" y="148" font-family="sans-serif" font-size="13" fill="#B8AFA0" text-anchor="middle">Every recommendation</text>
+  <text x="370" y="168" font-family="sans-serif" font-size="13" fill="#B8AFA0" text-anchor="middle">comes with a reason.</text>
+  <text x="370" y="200" font-family="sans-serif" font-size="13" fill="#B8AFA0" text-anchor="middle">You always know why</text>
+  <text x="370" y="220" font-family="sans-serif" font-size="13" fill="#B8AFA0" text-anchor="middle">an option was chosen.</text>
+  <text x="370" y="258" font-family="sans-serif" font-size="12" font-weight="700" fill="#F59E0B" text-anchor="middle">Transparent. Always.</text>
 
-  <!-- Principle 3: Control -->
-  <g class="fade-in delay-3">
-    <rect x="530" y="120" width="200" height="180" rx="20" fill="#1E2D45" stroke="#DC2626" stroke-width="3"/>
-    <text x="630" y="165" font-size="48" text-anchor="middle">🔒</text>
-    <text x="630" y="205" font-family="Plus Jakarta Sans, sans-serif" font-size="20" font-weight="700" fill="#DC2626" text-anchor="middle">
-      Control
-    </text>
-    <text x="630" y="235" font-family="Inter, sans-serif" font-size="13" fill="#B8AFA0" text-anchor="middle">
-      Nothing executes
-    </text>
-    <text x="630" y="255" font-family="Inter, sans-serif" font-size="13" fill="#B8AFA0" text-anchor="middle">
-      without approval
-    </text>
-    <text x="630" y="285" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#F59E0B" text-anchor="middle">
-      You have final say
-    </text>
-  </g>
+  <!-- Card 3: Control -->
+  <rect x="510" y="60" width="200" height="220" rx="18" fill="#1E2D45" stroke="#DC2626" stroke-width="3"/>
+  <rect x="510" y="60" width="200" height="6" rx="3" fill="#DC2626"/>
+  <text x="610" y="110" font-family="sans-serif" font-size="20" font-weight="700" fill="#DC2626" text-anchor="middle">Control</text>
+  <text x="610" y="148" font-family="sans-serif" font-size="13" fill="#B8AFA0" text-anchor="middle">Nothing executes</text>
+  <text x="610" y="168" font-family="sans-serif" font-size="13" fill="#B8AFA0" text-anchor="middle">without your approval.</text>
+  <text x="610" y="200" font-family="sans-serif" font-size="13" fill="#B8AFA0" text-anchor="middle">The agent acts for you,</text>
+  <text x="610" y="220" font-family="sans-serif" font-size="13" fill="#B8AFA0" text-anchor="middle">never instead of you.</text>
+  <text x="610" y="258" font-family="sans-serif" font-size="12" font-weight="700" fill="#F59E0B" text-anchor="middle">Your call. Always.</text>
 
-  <!-- Principle 4: Speed -->
-  <g class="fade-in delay-4">
-    <rect x="770" y="120" width="200" height="180" rx="20" fill="#1E2D45" stroke="#F59E0B" stroke-width="3"/>
-    <text x="870" y="165" font-size="48" text-anchor="middle">⚡</text>
-    <text x="870" y="205" font-family="Plus Jakarta Sans, sans-serif" font-size="20" font-weight="700" fill="#F59E0B" text-anchor="middle">
-      Speed
-    </text>
-    <text x="870" y="235" font-family="Inter, sans-serif" font-size="13" fill="#B8AFA0" text-anchor="middle">
-      Machine research,
-    </text>
-    <text x="870" y="255" font-family="Inter, sans-serif" font-size="13" fill="#B8AFA0" text-anchor="middle">
-      human decision
-    </text>
-    <text x="870" y="285" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#14B8A6" text-anchor="middle">
-      7 tabs → 1 screen
-    </text>
-  </g>
+  <!-- Card 4: Speed -->
+  <rect x="750" y="60" width="200" height="220" rx="18" fill="#1E2D45" stroke="#F59E0B" stroke-width="3"/>
+  <rect x="750" y="60" width="200" height="6" rx="3" fill="#F59E0B"/>
+  <text x="850" y="110" font-family="sans-serif" font-size="20" font-weight="700" fill="#F59E0B" text-anchor="middle">Speed</text>
+  <text x="850" y="148" font-family="sans-serif" font-size="13" fill="#B8AFA0" text-anchor="middle">Machine-speed research,</text>
+  <text x="850" y="168" font-family="sans-serif" font-size="13" fill="#B8AFA0" text-anchor="middle">human-speed decision.</text>
+  <text x="850" y="200" font-family="sans-serif" font-size="13" fill="#B8AFA0" text-anchor="middle">7 open tabs reduced</text>
+  <text x="850" y="220" font-family="sans-serif" font-size="13" fill="#B8AFA0" text-anchor="middle">to one clear screen.</text>
+  <text x="850" y="258" font-family="sans-serif" font-size="12" font-weight="700" fill="#14B8A6" text-anchor="middle">Fast. Focused.</text>
 
-  <!-- Principle 5: Memory -->
-  <g class="fade-in delay-5">
-    <rect x="1010" y="120" width="200" height="180" rx="20" fill="#1E2D45" stroke="#C96A2B" stroke-width="3"/>
-    <text x="1110" y="165" font-size="48" text-anchor="middle">🧠</text>
-    <text x="1110" y="205" font-family="Plus Jakarta Sans, sans-serif" font-size="20" font-weight="700" fill="#C96A2B" text-anchor="middle">
-      Memory
-    </text>
-    <text x="1110" y="235" font-family="Inter, sans-serif" font-size="13" fill="#B8AFA0" text-anchor="middle">
-      Learns your
-    </text>
-    <text x="1110" y="255" font-family="Inter, sans-serif" font-size="13" fill="#B8AFA0" text-anchor="middle">
-      preferences
-    </text>
-    <text x="1110" y="285" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#14B8A6" text-anchor="middle">
-      Gets smarter over time
-    </text>
-  </g>
 
-  <!-- Bottom section: The Promise -->
-  <g class="fade-in delay-5">
-    <rect x="200" y="380" width="800" height="160" rx="25" fill="#2D3F5C" stroke="#14B8A6" stroke-width="3"/>
-    <text x="600" y="425" font-family="Plus Jakarta Sans, sans-serif" font-size="24" font-weight="700" fill="#14B8A6" text-anchor="middle">
-      The YunoClaw Promise
-    </text>
-    <text x="600" y="465" font-family="Inter, sans-serif" font-size="16" fill="#F6F1E8" text-anchor="middle">
-      We work at machine speed but respect your human boundaries.
-    </text>
-    <text x="600" y="495" font-family="Inter, sans-serif" font-size="16" fill="#F6F1E8" text-anchor="middle">
-      Every search is constrained. Every result is explained.
-    </text>
-    <text x="600" y="525" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#F59E0B" text-anchor="middle">
-      Nothing happens without your approval.
-    </text>
-  </g>
 </svg>

@@ -1,24 +1,20 @@
 <svg width="1000" height="800" viewBox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap');
-      
-      @keyframes subtleGlow {
-        0%, 100% { filter: drop-shadow(0 0 6px rgba(20, 184, 166, 0.5)); }
-        50% { filter: drop-shadow(0 0 10px rgba(20, 184, 166, 0.8)); }
+      .line-anim {
+        stroke-dasharray: 12 6;
+        animation: dash 2s linear infinite;
       }
-      
-      @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+      .line-anim-rev {
+        stroke-dasharray: 12 6;
+        animation: dash-rev 2.5s linear infinite;
       }
-      
-      .subtle-glow { animation: subtleGlow 4s ease-in-out infinite; }
-      .fade-in { animation: fadeIn 1s ease-out forwards; }
-      .delay-1 { animation-delay: 0.3s; opacity: 0; }
-      .delay-2 { animation-delay: 0.6s; opacity: 0; }
-      .delay-3 { animation-delay: 0.9s; opacity: 0; }
-      .delay-4 { animation-delay: 1.2s; opacity: 0; }
+      @keyframes dash {
+        to { stroke-dashoffset: -36; }
+      }
+      @keyframes dash-rev {
+        to { stroke-dashoffset: 36; }
+      }
     </style>
   </defs>
 
@@ -26,129 +22,75 @@
   <rect width="1000" height="800" fill="#0A1628"/>
 
   <!-- Title -->
-  <text x="500" y="60" font-family="Plus Jakarta Sans, sans-serif" font-size="32" font-weight="700" fill="#F6F1E8" text-anchor="middle">
-    The YunoClaw Core Loop
-  </text>
+  <text x="500" y="58" font-family="sans-serif" font-size="30" font-weight="700" fill="#F6F1E8" text-anchor="middle">The YunoClaw Core Loop</text>
 
-  <!-- Central circular orbit path -->
-  <circle cx="500" cy="400" r="280" fill="none" stroke="#2D3F5C" stroke-width="2" stroke-dasharray="10 5" opacity="0.4"/>
+  <!-- Orbit ring -->
+  <circle cx="500" cy="400" r="270" fill="none" stroke="#2D3F5C" stroke-width="2" stroke-dasharray="10 6" opacity="0.4"/>
 
-  <!-- Center: Agent Core with logo -->
-  <g class="fade-in">
-    <circle cx="500" cy="400" r="90" fill="#1E2D45" stroke="#14B8A6" stroke-width="3" class="subtle-glow"/>
-    
-    <!-- Embedded YunoClaw logo -->
-    <g transform="translate(450, 360) scale(1.5)">
-      <path d="M16 22 C16 22 7 20 6 13 C5 7 9 4 12 5 C14 5.5 14.5 7 13.5 9 C12.5 11 12 13 13 15 C14 17 16 18 16 22 Z" fill="#14B8A6"/>
-      <path d="M16 22 C16 22 25 20 26 13 C27 7 23 4 20 5 C18 5.5 17.5 7 18.5 9 C19.5 11 20 13 19 15 C18 17 16 18 16 22 Z" fill="#14B8A6"/>
-      <path d="M11 24 C11 21.8 13.2 20 16 20 C18.8 20 21 21.8 21 24 C21 26.2 18.8 28 16 28 C13.2 28 11 26.2 11 24 Z" fill="#14B8A6"/>
-    </g>
-    
-    <text x="500" y="515" font-family="Plus Jakarta Sans, sans-serif" font-size="18" font-weight="700" fill="#14B8A6" text-anchor="middle">
-      YunoClaw Agent
-    </text>
+  <!-- Center: Agent Core -->
+  <circle cx="500" cy="400" r="88" fill="#1E2D45" stroke="#14B8A6" stroke-width="3"/>
+  <g transform="translate(456, 362) scale(2.75)">
+    <path d="M16 22 C16 22 7 20 6 13 C5 7 9 4 12 5 C14 5.5 14.5 7 13.5 9 C12.5 11 12 13 13 15 C14 17 16 18 16 22 Z" fill="#14B8A6"/>
+    <path d="M16 22 C16 22 25 20 26 13 C27 7 23 4 20 5 C18 5.5 17.5 7 18.5 9 C19.5 11 20 13 19 15 C18 17 16 18 16 22 Z" fill="#14B8A6"/>
+    <path d="M11 24 C11 21.8 13.2 20 16 20 C18.8 20 21 21.8 21 24 C21 26.2 18.8 28 16 28 C13.2 28 11 26.2 11 24 Z" fill="#14B8A6"/>
   </g>
 
-  <!-- Top: Human Sets Rules -->
-  <g class="fade-in delay-1">
-    <rect x="325" y="80" width="350" height="90" rx="45" fill="#C96A2B" opacity="0.95"/>
-    <text x="500" y="115" font-family="Inter, sans-serif" font-size="20" font-weight="600" fill="#0A1628" text-anchor="middle">
-      👤 Human
-    </text>
-    <text x="500" y="145" font-family="Inter, sans-serif" font-size="16" fill="#0A1628" text-anchor="middle">
-      Sets Rules & Boundaries
-    </text>
-  </g>
+  <!-- Top: Human -->
+  <rect x="325" y="78" width="350" height="88" rx="44" fill="#C96A2B"/>
+  <text x="500" y="113" font-family="sans-serif" font-size="20" font-weight="700" fill="#0A1628" text-anchor="middle">Human</text>
+  <text x="500" y="143" font-family="sans-serif" font-size="15" fill="#0A1628" text-anchor="middle">Sets Rules and Boundaries</text>
 
-  <!-- Arrow from Human to Agent -->
-  <path d="M 500 170 L 500 310" fill="none" stroke="#C96A2B" stroke-width="4" opacity="0.8" class="fade-in delay-1"/>
-  <polygon points="500,310 495,300 505,300" fill="#C96A2B" opacity="0.8" class="fade-in delay-1"/>
+  <!-- Animated: Human down to Agent -->
+  <line x1="500" y1="166" x2="500" y2="308" stroke="#C96A2B" stroke-width="3" class="line-anim"/>
+  <polygon points="500,312 493,298 507,298" fill="#C96A2B"/>
 
-  <!-- Right: Agent Searches -->
-  <g class="fade-in delay-2">
-    <rect x="720" y="320" width="250" height="160" rx="20" fill="#1E2D45" stroke="#14B8A6" stroke-width="2.5"/>
-    <text x="845" y="360" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="#14B8A6" text-anchor="middle">
-      🔍 Agent Actions
-    </text>
-    <text x="845" y="395" font-family="Inter, sans-serif" font-size="15" fill="#B8AFA0" text-anchor="middle">
-      • Searches products
-    </text>
-    <text x="845" y="425" font-family="Inter, sans-serif" font-size="15" fill="#B8AFA0" text-anchor="middle">
-      • Filters by rules
-    </text>
-    <text x="845" y="455" font-family="Inter, sans-serif" font-size="15" fill="#B8AFA0" text-anchor="middle">
-      • Ranks options
-    </text>
-  </g>
+  <!-- Safety Layer -->
+  <rect x="255" y="192" width="490" height="64" rx="14" fill="#2D3F5C" stroke="#DC2626" stroke-width="2"/>
+  <text x="500" y="220" font-family="sans-serif" font-size="15" font-weight="700" fill="#DC2626" text-anchor="middle">Safety Layer</text>
+  <text x="500" y="244" font-family="sans-serif" font-size="13" fill="#B8AFA0" text-anchor="middle">Budget enforcement  |  Manual approval  |  Audit trail</text>
 
-  <!-- Arrow from Agent to Actions -->
-  <path d="M 590 400 L 720 400" fill="none" stroke="#14B8A6" stroke-width="4" opacity="0.8" class="fade-in delay-2"/>
-  <polygon points="720,400 710,395 710,405" fill="#14B8A6" opacity="0.8" class="fade-in delay-2"/>
+  <!-- Right: Agent Actions -->
+  <rect x="718" y="318" width="252" height="164" rx="18" fill="#1E2D45" stroke="#14B8A6" stroke-width="2.5"/>
+  <text x="844" y="356" font-family="sans-serif" font-size="17" font-weight="700" fill="#14B8A6" text-anchor="middle">Agent Actions</text>
+  <text x="844" y="388" font-family="sans-serif" font-size="14" fill="#B8AFA0" text-anchor="middle">Searches products</text>
+  <text x="844" y="416" font-family="sans-serif" font-size="14" fill="#B8AFA0" text-anchor="middle">Filters by rules</text>
+  <text x="844" y="444" font-family="sans-serif" font-size="14" fill="#B8AFA0" text-anchor="middle">Ranks options</text>
+  <text x="844" y="472" font-family="sans-serif" font-size="14" fill="#B8AFA0" text-anchor="middle">Explains results</text>
 
-  <!-- Bottom: Merchant Delivers -->
-  <g class="fade-in delay-3">
-    <rect x="325" y="630" width="350" height="90" rx="45" fill="#F59E0B" opacity="0.95"/>
-    <text x="500" y="665" font-family="Inter, sans-serif" font-size="20" font-weight="600" fill="#0A1628" text-anchor="middle">
-      🏪 Merchants
-    </text>
-    <text x="500" y="695" font-family="Inter, sans-serif" font-size="16" fill="#0A1628" text-anchor="middle">
-      Deliver Product Options
-    </text>
-  </g>
+  <!-- Animated: Agent right to Actions -->
+  <line x1="588" y1="400" x2="714" y2="400" stroke="#14B8A6" stroke-width="3" class="line-anim"/>
+  <polygon points="718,400 704,393 704,407" fill="#14B8A6"/>
 
-  <!-- Arrow from Actions to Merchant -->
-  <path d="M 845 480 L 845 560 L 650 630" fill="none" stroke="#F59E0B" stroke-width="4" opacity="0.8" class="fade-in delay-3"/>
-  <polygon points="650,630 655,620 660,628" fill="#F59E0B" opacity="0.8" class="fade-in delay-3"/>
+  <!-- Bottom: Merchants -->
+  <rect x="325" y="634" width="350" height="88" rx="44" fill="#F59E0B"/>
+  <text x="500" y="669" font-family="sans-serif" font-size="20" font-weight="700" fill="#0A1628" text-anchor="middle">Merchants</text>
+  <text x="500" y="699" font-family="sans-serif" font-size="15" fill="#0A1628" text-anchor="middle">Deliver Product Options</text>
 
-  <!-- Left: Human Approves -->
-  <g class="fade-in delay-4">
-    <rect x="30" y="320" width="250" height="160" rx="20" fill="#1E2D45" stroke="#14B8A6" stroke-width="2.5"/>
-    <text x="155" y="360" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="#14B8A6" text-anchor="middle">
-      ✅ Human Decision
-    </text>
-    <text x="155" y="395" font-family="Inter, sans-serif" font-size="15" fill="#B8AFA0" text-anchor="middle">
-      • Reviews options
-    </text>
-    <text x="155" y="425" font-family="Inter, sans-serif" font-size="15" fill="#B8AFA0" text-anchor="middle">
-      • Understands why
-    </text>
-    <text x="155" y="455" font-family="Inter, sans-serif" font-size="15" fill="#B8AFA0" text-anchor="middle">
-      • Approves or rejects
-    </text>
-  </g>
+  <!-- Animated: Actions down to Merchants -->
+  <path d="M 844 482 L 844 570 Q 844 622 790 634" fill="none" stroke="#F59E0B" stroke-width="3" class="line-anim"/>
+  <polygon points="790,634 796,620 804,626" fill="#F59E0B"/>
 
-  <!-- Arrow from Merchant to Human Decision -->
-  <path d="M 350 630 L 155 560 L 155 480" fill="none" stroke="#14B8A6" stroke-width="4" opacity="0.8" class="fade-in delay-4"/>
-  <polygon points="155,480 150,490 160,490" fill="#14B8A6" opacity="0.8" class="fade-in delay-4"/>
+  <!-- Trust Layer -->
+  <rect x="255" y="544" width="490" height="64" rx="14" fill="#2D3F5C" stroke="#059669" stroke-width="2"/>
+  <text x="500" y="572" font-family="sans-serif" font-size="15" font-weight="700" fill="#059669" text-anchor="middle">Trust Layer</text>
+  <text x="500" y="596" font-family="sans-serif" font-size="13" fill="#B8AFA0" text-anchor="middle">Explainability  |  Trade-offs  |  Alternatives</text>
 
-  <!-- Arrow from Human Decision back to Human -->
-  <path d="M 155 320 L 155 240 L 350 125" fill="none" stroke="#C96A2B" stroke-width="4" opacity="0.8" class="fade-in delay-4"/>
-  <polygon points="350,125 340,128 345,118" fill="#C96A2B" opacity="0.8" class="fade-in delay-4"/>
+  <!-- Left: Human Decision -->
+  <rect x="30" y="318" width="252" height="164" rx="18" fill="#1E2D45" stroke="#14B8A6" stroke-width="2.5"/>
+  <text x="156" y="356" font-family="sans-serif" font-size="17" font-weight="700" fill="#14B8A6" text-anchor="middle">Human Decision</text>
+  <text x="156" y="388" font-family="sans-serif" font-size="14" fill="#B8AFA0" text-anchor="middle">Reviews options</text>
+  <text x="156" y="416" font-family="sans-serif" font-size="14" fill="#B8AFA0" text-anchor="middle">Understands why</text>
+  <text x="156" y="444" font-family="sans-serif" font-size="14" fill="#B8AFA0" text-anchor="middle">Approves or rejects</text>
 
-  <!-- Trust Layer (center bottom) -->
-  <g class="fade-in delay-3">
-    <rect x="250" y="540" width="500" height="70" rx="15" fill="#2D3F5C" stroke="#059669" stroke-width="2" opacity="0.9"/>
-    <text x="500" y="568" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#059669" text-anchor="middle">
-      🛡️ Trust Layer
-    </text>
-    <text x="500" y="595" font-family="Inter, sans-serif" font-size="14" fill="#B8AFA0" text-anchor="middle">
-      Explainability • Trade-offs • Alternatives
-    </text>
-  </g>
+  <!-- Animated: Merchants left to Human Decision -->
+  <path d="M 325 678 L 156 570 L 156 482" fill="none" stroke="#14B8A6" stroke-width="3" class="line-anim-rev"/>
+  <polygon points="156,482 149,496 163,496" fill="#14B8A6"/>
 
-  <!-- Safety Layer (center top) -->
-  <g class="fade-in delay-1">
-    <rect x="250" y="190" width="500" height="70" rx="15" fill="#2D3F5C" stroke="#DC2626" stroke-width="2" opacity="0.9"/>
-    <text x="500" y="218" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#DC2626" text-anchor="middle">
-      🔒 Safety Layer
-    </text>
-    <text x="500" y="245" font-family="Inter, sans-serif" font-size="14" fill="#B8AFA0" text-anchor="middle">
-      Budget enforcement • Manual approval • Audit trail
-    </text>
-  </g>
+  <!-- Animated: Human Decision up back to Human -->
+  <path d="M 156 318 L 156 230 Q 156 122 325 122" fill="none" stroke="#C96A2B" stroke-width="3" class="line-anim-rev"/>
+  <polygon points="325,122 311,115 311,129" fill="#C96A2B"/>
 
-  <!-- Bottom tagline -->
-  <text x="500" y="770" font-family="Plus Jakarta Sans, sans-serif" font-size="20" font-weight="600" fill="#14B8A6" text-anchor="middle">
-    Trust + Control = Confidence
-  </text>
+  <!-- Tagline -->
+  <text x="500" y="762" font-family="sans-serif" font-size="19" font-weight="700" fill="#14B8A6" text-anchor="middle">Trust + Control = Confidence</text>
+
 </svg>
