@@ -1,0 +1,150 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap');
+      
+      @keyframes subtlePulse {
+        0%, 100% { opacity: 0.9; }
+        50% { opacity: 1; }
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      
+      .subtle-pulse { animation: subtlePulse 3s ease-in-out infinite; }
+      .fade-in { animation: fadeIn 1s ease-out forwards; }
+      .delay-1 { animation-delay: 0.3s; opacity: 0; }
+      .delay-2 { animation-delay: 0.6s; opacity: 0; }
+      .delay-3 { animation-delay: 0.9s; opacity: 0; }
+    </style>
+    
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="700" fill="#0A1628"/>
+  
+  <!-- Border frame -->
+  <rect x="10" y="10" width="1180" height="680" fill="none" stroke="#D97706" stroke-width="6" rx="15"/>
+
+  <!-- Title -->
+  <text x="600" y="60" font-family="Plus Jakarta Sans, sans-serif" font-size="32" font-weight="700" fill="#F6F1E8" text-anchor="middle">
+    YunoClaw Architecture
+  </text>
+
+  <!-- Left side: Input Sources -->
+  <g class="fade-in delay-1">
+    <rect x="50" y="180" width="220" height="70" rx="35" fill="#C96A2B" opacity="0.95"/>
+    <text x="160" y="220" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="#0A1628" text-anchor="middle">
+      Your Intent
+    </text>
+  </g>
+
+  <g class="fade-in delay-1">
+    <rect x="50" y="280" width="220" height="70" rx="35" fill="#C96A2B" opacity="0.95"/>
+    <text x="160" y="320" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="#0A1628" text-anchor="middle">
+      Budget Rules
+    </text>
+  </g>
+
+  <g class="fade-in delay-1">
+    <rect x="50" y="380" width="220" height="70" rx="35" fill="#C96A2B" opacity="0.95"/>
+    <text x="160" y="420" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="#0A1628" text-anchor="middle">
+      Preferences
+    </text>
+  </g>
+
+  <!-- Central Agent Core with actual logo -->
+  <g class="fade-in delay-2">
+    <!-- Subtle dotted circle -->
+    <circle cx="600" cy="320" r="150" fill="none" stroke="#14B8A6" stroke-width="2" stroke-dasharray="6 6" opacity="0.4"/>
+    
+    <!-- Agent container -->
+    <rect x="470" y="250" width="260" height="140" rx="20" fill="#1E2D45" stroke="#14B8A6" stroke-width="3" filter="url(#glow)"/>
+    
+    <!-- Embedded YunoClaw logo (scaled up) -->
+    <g transform="translate(550, 270) scale(2.5)">
+      <!-- Left pincer arm -->
+      <path d="M16 22 C16 22 7 20 6 13 C5 7 9 4 12 5 C14 5.5 14.5 7 13.5 9 C12.5 11 12 13 13 15 C14 17 16 18 16 22 Z" fill="#14B8A6" class="subtle-pulse"/>
+      <!-- Right pincer arm -->
+      <path d="M16 22 C16 22 25 20 26 13 C27 7 23 4 20 5 C18 5.5 17.5 7 18.5 9 C19.5 11 20 13 19 15 C18 17 16 18 16 22 Z" fill="#14B8A6" class="subtle-pulse"/>
+      <!-- Connecting base -->
+      <path d="M11 24 C11 21.8 13.2 20 16 20 C18.8 20 21 21.8 21 24 C21 26.2 18.8 28 16 28 C13.2 28 11 26.2 11 24 Z" fill="#14B8A6" class="subtle-pulse"/>
+    </g>
+    
+    <text x="600" y="375" font-family="Plus Jakarta Sans, sans-serif" font-size="20" font-weight="700" fill="#F6F1E8" text-anchor="middle">
+      YunoClaw Agent
+    </text>
+  </g>
+
+  <!-- Curved connections from left to center -->
+  <path d="M 270 215 Q 400 215 470 280" fill="none" stroke="#C96A2B" stroke-width="3" opacity="0.8" class="fade-in delay-1"/>
+  <path d="M 270 315 Q 350 315 470 320" fill="none" stroke="#C96A2B" stroke-width="3" opacity="0.8" class="fade-in delay-1"/>
+  <path d="M 270 415 Q 400 380 470 360" fill="none" stroke="#C96A2B" stroke-width="3" opacity="0.8" class="fade-in delay-1"/>
+
+  <!-- Bottom: Tools -->
+  <g class="fade-in delay-3">
+    <rect x="380" y="520" width="440" height="120" rx="20" fill="#1E2D45" stroke="#0F766E" stroke-width="2" stroke-dasharray="8 4"/>
+    <text x="600" y="555" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="#14B8A6" text-anchor="middle">
+      🔧 Tools
+    </text>
+  </g>
+
+  <g class="fade-in delay-3">
+    <rect x="400" y="575" width="130" height="45" rx="22.5" fill="#DC8B6B" opacity="0.9"/>
+    <text x="465" y="602" font-family="Inter, sans-serif" font-size="15" fill="#0A1628" text-anchor="middle" font-weight="500">Search API</text>
+  </g>
+
+  <g class="fade-in delay-3">
+    <rect x="545" y="575" width="130" height="45" rx="22.5" fill="#DC8B6B" opacity="0.9"/>
+    <text x="610" y="602" font-family="Inter, sans-serif" font-size="15" fill="#0A1628" text-anchor="middle" font-weight="500">Merchants</text>
+  </g>
+
+  <g class="fade-in delay-3">
+    <rect x="690" y="575" width="130" height="45" rx="22.5" fill="#DC8B6B" opacity="0.9"/>
+    <text x="755" y="602" font-family="Inter, sans-serif" font-size="15" fill="#0A1628" text-anchor="middle" font-weight="500">Database</text>
+  </g>
+
+  <!-- Connection from agent to tools -->
+  <path d="M 600 390 L 600 520" fill="none" stroke="#14B8A6" stroke-width="3" opacity="0.8" class="fade-in delay-2"/>
+
+  <!-- Right side: Outputs -->
+  <g class="fade-in delay-2">
+    <rect x="930" y="180" width="220" height="70" rx="35" fill="#14B8A6" opacity="0.95"/>
+    <text x="1040" y="220" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="#0A1628" text-anchor="middle">
+      Ranked Results
+    </text>
+  </g>
+
+  <g class="fade-in delay-2">
+    <rect x="930" y="280" width="220" height="70" rx="35" fill="#14B8A6" opacity="0.95"/>
+    <text x="1040" y="320" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="#0A1628" text-anchor="middle">
+      Explanations
+    </text>
+  </g>
+
+  <g class="fade-in delay-2">
+    <rect x="930" y="380" width="220" height="70" rx="35" fill="#14B8A6" opacity="0.95"/>
+    <text x="1040" y="420" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="#0A1628" text-anchor="middle">
+      Approval Gate
+    </text>
+  </g>
+
+  <!-- Curved connections from center to right -->
+  <path d="M 730 280 Q 850 215 930 215" fill="none" stroke="#14B8A6" stroke-width="3" opacity="0.8" class="fade-in delay-2"/>
+  <path d="M 730 320 Q 820 315 930 315" fill="none" stroke="#14B8A6" stroke-width="3" opacity="0.8" class="fade-in delay-2"/>
+  <path d="M 730 360 Q 850 380 930 415" fill="none" stroke="#14B8A6" stroke-width="3" opacity="0.8" class="fade-in delay-2"/>
+
+  <!-- Bottom tagline -->
+  <text x="600" y="670" font-family="Inter, sans-serif" font-size="16" fill="#B8AFA0" text-anchor="middle" opacity="0.9">
+    Machine speed research • Human decision control
+  </text>
+</svg>
